@@ -387,6 +387,16 @@ module:			module_declspec
 			module = IDL_NODE_UP ($2);
 			IDL_MODULE (module).definition_list =
 				IDL_list_concat (IDL_MODULE (module).definition_list, $5);
+			if(!IS_INHIBIT_STATE()
+				&& (module->declspec & IDLF_DECLSPEC_INHIBIT))
+			{
+				/* un-inhibit the module, as it now has
+				 * non-inhibited content which shouldn't
+				 * disappear in the optimization stage.
+				 */
+				module->declspec &= ~IDLF_DECLSPEC_INHIBIT;
+			}
+
 			module = NULL;
 		}
 	} else
