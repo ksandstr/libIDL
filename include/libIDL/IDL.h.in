@@ -106,7 +106,7 @@ extern "C" {
 			    G_STRFUNC)->u.name)
 
 /* GLib 2.0 requires 64-bit types */
-#define IDL_LL		@IDL_LL@
+#define IDL_LL		G_GINT64_MODIFIER
 typedef gint64		IDL_longlong_t;
 typedef guint64		IDL_ulonglong_t;
 
