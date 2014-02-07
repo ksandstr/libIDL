@@ -25,6 +25,8 @@ configure
 depcomp
 INSTALL
 install-sh
+compile
+*.plist
 
 # IDL.h is generated from IDL.h.in by autoconf.
 include/libIDL/IDL.h
